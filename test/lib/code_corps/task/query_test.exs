@@ -121,18 +121,18 @@ defmodule CodeCorps.Task.QueryTest do
   end
 
   describe "query/2" do
-    test "queries by project_id and id as number" do
+    test "queries by project_id and number" do
       [task, _] = insert_pair(:task)
       retrieved_task =
-        find_with_query(%{"id" => task.number, "project_id" => task.project_id})
+        find_with_query(%{"number" => task.number, "project_id" => task.project_id})
 
       assert retrieved_task.id == task.id
     end
 
-    test "queries by task_list_id and id as number" do
+    test "queries by task_list_id and number" do
       [task, _] = insert_pair(:task)
       retrieved_task =
-        find_with_query(%{"id" => task.number, "task_list_id" => task.task_list_id})
+        find_with_query(%{"number" => task.number, "task_list_id" => task.task_list_id})
 
       assert retrieved_task.id == task.id
     end

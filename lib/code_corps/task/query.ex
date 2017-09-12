@@ -42,10 +42,10 @@ defmodule CodeCorps.Task.Query do
   `Task` record.
   """
   @spec query(Queryable.t, map) :: Queryable.t
-  def query(query, %{"project_id" => project_id, "id" => number}) do
+  def query(query, %{"project_id" => project_id, "number" => number}) do
     query |> where(project_id: ^project_id, number: ^number)
   end
-  def query(query, %{"task_list_id" => task_list_id, "id" => number}) do
+  def query(query, %{"task_list_id" => task_list_id, "number" => number}) do
     query |> where(task_list_id: ^task_list_id, number: ^number)
   end
   def query(query, %{"id" => id}) do
